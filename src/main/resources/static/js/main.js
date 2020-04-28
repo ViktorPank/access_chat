@@ -6,6 +6,7 @@ var messageForm = document.querySelector('#messageForm');
 var messageInput = document.querySelector('#message');
 var messageArea = document.querySelector('#messageArea');
 var connectingElement = document.querySelector('.connecting');
+var sendElement = document.querySelector('.primary');
 var stompClient = null;
 var username = null;
 var colors = [
@@ -38,6 +39,7 @@ function onError(error) {
     connectingElement.style.color = 'red';
 }
 function sendMessage(event) {
+
     var messageContent = messageInput.value.trim();
     if(messageContent && stompClient) {
         var chatMessage = {
